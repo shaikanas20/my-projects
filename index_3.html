@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style_3.css"/>
+</head>
+<body>
+  <div class="dashboard">
+
+    <!-- Header -->
+    <header class="header">
+      <h1>Admin Dashboard</h1>
+      <button id="theme-toggle">Dark Mode</button>
+    </header>
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Users</a></li>
+        <li><a href="#">Settings</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+      <h2>Welcome, ANAS!</h2>
+      <P>This is the main content area.
+        <P>-> Add charts<P>
+        <P>-> tables<P>
+        <P>-> reports here</p>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2025 Admin Panel</p>
+    </footer>
+
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    toggleBtn.addEventListener('click', () => {
+      const isLight = html.getAttribute('data-theme') === 'light';
+      html.setAttribute('data-theme', isLight ? 'dark' : 'light');
+      toggleBtn.textContent = isLight ? 'Light Mode' : 'Dark Mode';
+    });
+  </script>
+</body>
+</html>
