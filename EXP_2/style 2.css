@@ -35,7 +35,7 @@ body {
 /* Balance amount */
 .balance-amount {
   font-size: 24px;
-  color: green;
+  color: rgb(188, 90, 119);
   margin-bottom: 20px;
 }
 
@@ -53,7 +53,7 @@ body {
 
 /* Deposit button */
 .deposit {
-  background-color: #28a745;
+  background-color: #5634a0;
 }
 
 /* Withdraw button */
