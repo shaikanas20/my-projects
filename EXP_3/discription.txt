@@ -67,7 +67,7 @@ Invalid Actions:
 
 Elements overlap or text is cut off on small screens.
 
----
+
 
 2. CSS Styling Breakdown: A Structured Overview
 
@@ -103,7 +103,6 @@ Effect: Padding for spacing, responsive text size.
 2.6 ELEMENT: .footer
 Purpose: Stays at the bottom, visible in both themes.
 
----
 
 3. LEARNING OUTCOMES
 
