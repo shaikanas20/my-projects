@@ -1,0 +1,55 @@
+LIVE CHARACTER COUNTER – TEST CASES & VALIDATIONS:
+
+FUNCTIONALITY:
+           Real-time character counting that updates instantly as the user types or deletes text in the textarea.
+
+COMPONENTS BREAKDOWN:
+
+ELEMENT 1: <textarea>
+           Purpose: Text input area where users can type content.
+           Property: id="txtData"
+           Effect: Provides a unique identifier for JavaScript to access the textarea.
+           Property: placeholder="Type something here..."
+           Effect: Displays hint text when the textarea is empty.
+
+ELEMENT 2: <span id="charCount">
+           Purpose: Displays the live character count.
+           Property: id="charCount"
+           Effect: Allows JavaScript to dynamically update the count.
+           Initial Value: 0
+           Effect: Shows zero characters when the page loads.
+
+ELEMENT 3: <h2> (Page Header)
+            Content: "Live Character Counter"
+            Effect: Provides a clear title indicating the tool’s purpose.
+            JAVASCRIPT FUNCTIONALITY
+            Event Listener on Textarea (input event)
+            Purpose: Triggers real-time character count update whenever input changes.
+
+Process:
+            Retrieves current textarea value length with:
+            textarea.value.length
+            Updates the counter display using:
+            charCount.innerText = textarea.value.length;
+            Execution: Runs automatically on typing, deleting, or pasting text.
+
+TEST CASES:
+            Valid Inputs
+            Letters (abc)
+            Numbers (123)
+            Spaces and punctuation (Hello, World!)
+            Empty textarea ("") → count shows 0
+            Multiple lines of text
+            Copy-paste operations
+
+Expected Behavior:
+            Counter increases instantly while typing.
+            Counter decreases when deleting text.
+            Counter includes spaces, new lines, and special characters.
+            Always accurate and in sync with text length.
+
+LEARNING OUTCOMES:
+            How to create live character counter functionality.
+            Usage of input event handling for real-time updates.
+            How to manipulate DOM elements dynamically with JavaScript (innerText).
+            Building an interactive UI that responds instantly to user actions.

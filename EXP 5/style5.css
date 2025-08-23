@@ -1,0 +1,38 @@
+.container {
+  border: 2px solid #444;
+  padding: 16px;
+  margin-bottom: 32px;
+  max-width: 500px;
+  background: #fff;
+}
+
+.product-list-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+select {
+  margin-bottom: 16px;
+}
+
+.product-item {
+  border: 1px solid #ccc;
+  background: #fafafa;
+  padding: 8px;
+  margin-bottom: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.product-item.selected {
+  background: #d2eafd;
+  border-color: #3875d7;
+  font-weight: bold;
+}
+
+.product-item:hover {
+  background: #a8d8ff;
+  box-shadow: 0 0 5px #279af1;
+}

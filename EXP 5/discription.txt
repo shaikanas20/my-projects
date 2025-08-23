@@ -1,0 +1,65 @@
+DYNAMIC PRODUCT FILTER – TEST CASES & VALIDATIONS
+
+FUNCTIONALITY:
+          Real-time product filtering and selection that updates instantly as the user selects a category from the dropdown.
+          Users can also click on a product to highlight it as selected.
+
+COMPONENTS BREAKDOWN:
+ELEMENT 1:
+          <select id="categoryDropdown">
+          Purpose: Dropdown menu for selecting product categories.
+          Properties:
+          id="categoryDropdown" → Provides a unique identifier for JavaScript to access the dropdown.
+          Effect: Filters the product list dynamically based on the selected category.
+
+ELEMENT 2: 
+          <div id="productList">
+          Purpose: Container for displaying the filtered list of products.
+          Properties:
+          id="productList" → Allows JavaScript to dynamically add product items.
+          Effect: Dynamically renders products based on selected category.
+
+ELEMENT 3: 
+          <div class="product-item">
+          Purpose: Represents an individual product in the list.
+          Properties:
+          class="product-item" → Provides styling and allows selection highlight.
+          Effect: Clickable item that updates selection state and highlights visually.
+
+ELEMENT 4: 
+          <div class="container"> and <h2> (optional title)
+          Purpose: Provides overall layout and title for the product list section.
+          Effect: Organizes the dropdown and product list into a visually clear container.
+
+JAVASCRIPT FUNCTIONALITY:
+
+Event Listeners:
+          Dropdown change event → Filters products based on selected category.
+          Product click event → Highlights the selected product and deselects previously selected one.
+
+Process:
+          Products are stored in a JavaScript array with name and category properties.
+          renderProducts(category) dynamically filters the array and updates the DOM with matching products.
+          selectProduct(div) manages selection highlighting by adding/removing the selected CSS class.
+          Filtering and selection update instantly without page reload.
+
+TEST CASES:
+
+Valid Inputs:
+          Selecting "All" → Shows all products.
+          Selecting a specific category (Clothing, Gadgets, Books) → Displays only products from that category.
+          Clicking a product → Highlights it as selected.
+          Changing the category after selecting a product → Deselects previous selection and shows only filtered products.
+
+EXPECTED BEHAVIOR:
+          Product list updates immediately when the category changes.
+          Clicking a product highlights it and deselects any previously selected item.
+          Only one product can be selected at a time.
+          Filtering and selection are responsive and visually clear.
+
+LEARNING OUTCOMES:
+          Understanding dynamic DOM manipulation with JavaScript (createElement, appendChild, innerHTML).
+          Using arrays and .filter() to implement dynamic filtering logic.
+          Handling events (click, change) to provide interactive functionality.
+          Applying CSS classes dynamically to provide real-time visual feedback (selected and hover states).
+          Structuring code with HTML, CSS, and JS for maintainable, modular, and interactive UI components.

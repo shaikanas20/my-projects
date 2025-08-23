@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.header {
+  grid-area: header;
+  background: #0078d4;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.theme-switch {
+  cursor: pointer;
+  background: white;
+  color: #0078d4;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background: #ddd;
+  padding: 1rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.main {
+  grid-area: main;
+  padding: 1rem;
+}
+
+.footer {
+  grid-area: footer;
+  background: #0078d4;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+
+#theme-toggle:checked ~ .dashboard {
+  background-color: #1e1e1e;
+  color: #eee;
+}
+
+#theme-toggle:checked ~ .dashboard .header {
+  background: #333;
+}
+
+#theme-toggle:checked ~ .dashboard .theme-switch {
+  background: #444;
+  color: white;
+}
+
+#theme-toggle:checked ~ .dashboard .sidebar {
+  background: #2d2d2d;
+}
+
+#theme-toggle:checked ~ .dashboard .footer {
+  background: #333;
+}
