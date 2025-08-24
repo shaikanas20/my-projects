@@ -1,0 +1,78 @@
+SVG Drawing Tool – Description
+
+FUNCTIONALITY:
+         A simple drawing tool built with SVG (Scalable Vector Graphics) that allows users to draw freehand 
+         lines (polylines) directly on the canvas by clicking and dragging the mouse.
+
+COMPONENTS BREAKDOWN:
+
+ELEMENT 1: 
+         <svg id="svgCanvas">
+         Purpose: The main drawing area.
+         Properties:
+         width="600", height="350" → Sets the drawing surface size.
+         id="svgCanvas" → Provides a unique identifier for JavaScript to access the SVG.
+         Effect: Displays an interactive canvas where user drawings are rendered.
+
+ELEMENT 2:
+         <polyline> (Generated dynamically)
+         Purpose: Represents the actual freehand line being drawn.
+         Properties (set in JS):
+         stroke="#2196f3" → Blue color for the line.
+         stroke-width="2" → Defines line thickness.
+         fill="none" → Ensures no area is filled inside the shape.
+         points="x,y …" → Stores a sequence of mouse coordinates to form the path.
+         Effect: Creates the visible drawing by connecting mouse movements.
+
+ELEMENT 3:
+         <h2> (Page Header)
+         Content: “SVG Drawing Tool”
+         Effect: Serves as a clear title for the application.
+
+JAVASCRIPT FUNCTIONALITY:
+         Event Listeners on <svg>
+         
+mouse down:
+         Purpose: Starts drawing.
+         Action: Creates a new <polyline> with the starting point where the mouse is clicked.
+
+mouse move:
+         Purpose: Tracks cursor while mouse is held down.
+         Action: Adds new (x, y) coordinates to the points attribute, extending the line.
+
+mouse up:
+         Purpose: Ends drawing when mouse button is released.
+         Action: Stops adding points to the polyline.
+
+mouse leave:
+         Purpose: Prevents accidental continued drawing if mouse leaves the canvas.
+         Action: Ends the drawing process safely.
+         Helper Function: getMousePosition(evt)
+         Purpose: Converts browser mouse position to coordinates relative to the SVG canvas.
+         Logic: Uses getBoundingClientRect() to adjust for margins and offsets.
+
+PROCESS FLOW:
+         User clicks (mousedown) → new <polyline> is created.
+         User drags (mousemove) → new coordinates are appended to the line.
+         User releases mouse (mouseup) → drawing stops.
+         If mouse leaves the SVG (mouseleave) → drawing stops automatically.
+         
+TEST CASES:
+         Valid Inputs (User Actions):
+         Drawing a single straight line (click → drag → release).
+         Drawing multiple shapes by starting/stopping multiple times.
+         Fast mouse movement → polyline follows smoothly.
+         Leaving canvas mid-draw → drawing ends properly.
+         Clicking without dragging → single point line is created.
+
+EXPECTED BEHAVIOR:
+         Polyline color is blue (#2196f3) with 2px thickness.
+         Lines appear instantly as the user moves the mouse.
+         Drawing stops on mouse release or leaving canvas.
+         Multiple drawings can exist on the same SVG.
+
+LEARNING OUTCOMES:
+         How to use SVG <polyline> for dynamic graphics.
+         Event-driven programming in JavaScript (mousedown, mousemove, mouseup).
+         Converting mouse positions into SVG coordinates.
+         Building an interactive freehand drawing application without external libraries.
